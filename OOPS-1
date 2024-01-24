@@ -1,0 +1,33 @@
+#create class
+class Book:
+    def __init__(self,title,author,pages,price):
+        self.title=title
+        self.author=author
+        self.pages=pages
+        self.price=price
+        self.__secret="secret"#__python inter change the and cannot access outside
+        
+    def getprice(self):
+        #Python hasattr() function is an inbuilt utility function, which is used to check if an object has the given named attribute and return true if present
+        if hasattr(self,"_discount"):
+            return self.price - (self.price * self._discount)
+        else:
+            return self.price
+            
+    
+    def setdiscount(self,amount):
+        self._discount=amount #_ to give developer hint that its local scope 
+        
+
+#instances of class
+Book1=Book("Bravery World","ancd",123,39)
+Book2=Book("War and peace","ancd",123,35.95)
+
+#print the class and property 
+#print(Book2.getprice())
+#Book2.setdiscount(0.25)
+#print(Book2.getprice())
+#print(Book2.__secret) ##__python inter change the
+#print(Book2._Book__secret) #secret
+print(type(Book1)==type(Book2)) #to check type
+print(isinstance(Book2,object)) #all instances are also instance of inbuild class object
