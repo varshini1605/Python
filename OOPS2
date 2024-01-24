@@ -1,0 +1,23 @@
+class Book:
+    BOOKTYPE={"hardcover","pages","ebook"}
+
+#create class method : which takes class as value not object
+    @classmethod
+    def getbooktype(cls):
+        return cls.BOOKTYPE
+    def set_title(self,newtitle):
+        self.title=new_title
+    
+    def __init__(self,title,booktype):
+        self.title=title
+        if not booktype in Book.BOOKTYPE:
+            raise ValueError(f"{booktype},not valid")
+        else:
+            self.booktype= booktype
+
+#ACCESS CLASS METHOD
+print("Book type:",Book.getbooktype())
+
+B1=Book("BOOK1","ebook")
+#B2=Book("BOOK1","comic")
+            
